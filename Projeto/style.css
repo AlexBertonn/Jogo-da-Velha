@@ -1,0 +1,128 @@
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+/*BOTÕES*/
+#buttons-container button {
+  border: none;
+  padding: 10px;
+  margin: 0 10px 10px;
+  border-radius: 50px;
+}
+
+/*JOGO*/
+#container {
+  display: flex;
+  width: 300px;
+  margin: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  /*Para centralizar uma div de position relative, deve-se colocar o margin-left e margin right automático*/
+}
+
+.box {
+  height: 100px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  flex: 1 1 33%;
+}
+
+/*Agora será retirado as bordas da velha.*/
+
+#block-1,
+#block-2,
+#block-3 {
+  border-top: none;
+}
+
+#block-3,
+#block-6,
+#block-9 {
+  border-right: none;
+}
+
+#block-9,
+#block-8,
+#block-7 {
+  border-bottom: none;
+}
+
+#block-1,
+#block-4,
+#block-7 {
+  border-left: none;
+}
+
+/*SÍMBOLOS*/
+.x {
+  color: red;
+  font-size: 65px;
+  display: inline-block;
+  line-height: 100px;
+}
+
+.o {
+  border: 2px solid green;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  margin-top: 17px;
+}
+
+/*PLACAR DO JOGO*/
+#scoreboard-container {
+  font-weight: bold;
+  margin-top: 30px;
+  font-size: 20px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+#x-scoreboard {
+  color: red;
+  font-size: 25px;
+  margin-right: 3px;
+}
+
+#o-scoreboard {
+  border: 2px solid green;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+/* MENSGAEM DE VITÓRIA */
+#message p {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 240px;
+  background-color: black;
+  color: white;
+  height: 100px;
+  width: 400px;
+  padding: 10px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CLASSE ESCONDIDA */
+/* .hide {
+  display: none !important;
+} */
