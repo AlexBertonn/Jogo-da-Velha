@@ -117,7 +117,7 @@ h1 {
   width: 400px;
   padding: 10px;
   font-size: 50px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -125,4 +125,4 @@ h1 {
 /* CLASSE ESCONDIDA */
 /* .hide {
   display: none !important;
-} */
+} 
