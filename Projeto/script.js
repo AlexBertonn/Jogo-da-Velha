@@ -35,7 +35,23 @@ for (let i = 0; i < boxes.length; i++) {
   });
 }
 
-//Ver quem vai jogar
+//SELEÇÃO DE QUEM JOGA, DOIS PLAYERS OU IA
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function () {
+    secondPlayer = this.getAttribute("id");
+
+    for (let j = 0; j < buttons.length; j++) {
+      buttons[j].style.display = "none";
+    }
+
+    setTimeout(function () {
+      let container = document.querySelector("#container");
+      container.classList.remove("hide");
+    }, 300);
+  });
+}
+
+//VER QUEM VAI JOGAR
 function checkElement(player1, player2) {
   if (player1 == player2) {
     //x
@@ -254,4 +270,42 @@ function declarationWinner(winner) {
   //EXIBIÇÃO DE MENSAGEM
   messageText.innerHTML = msg;
   messageContainer.classList.remove("hide");
+
+  //ESCONDER MENSAGEM
+  setTimeout(function () {
+    messageContainer.classList.add("hide");
+  }, 1000);
+
+  //ZERAR JOGADAS
+  player1 = 0;
+  player2 = 0;
+
+  //REMOVER AS JOGADAS ANTERIORES
+  let boxesToRemove = document.querySelectorAll(".box div");
+  for (let i = 0; i < boxesToRemove.length; i++) {
+    boxesToRemove[i].parentNode.removeChild(boxesToRemove[i]);
+  }
+}
+
+//CRIAÇÃO DA IA PARA JOGO SOLO
+function computerPlay() {
+  let cloneO = o.cloneNode(true);
+  counter = 0;
+  filled = 0;
+
+  for (let i = 0; i < boxes.length; i++) {
+    let randomNumber = Math.floor(Math.random() * 5);
+    if (boxes[i].childNodes[0] == undefined) {
+      if (randomNumber <= 1) {
+        boxes[i].appendChild(cloneO);
+        counter++;
+        break;
+      }
+    } else {
+      filled++;
+    }
+  }
+  if (counter == 0 && filled < 9) {
+    computerPlay();
+  }
 }
