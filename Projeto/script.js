@@ -25,12 +25,16 @@ for (let i = 0; i < boxes.length; i++) {
       //computar jogada
       if (player1 == player2) {
         player1++;
+        if (secondPlayer == "ai-player") {
+          computerPlay();
+          player2++;
+        }
       } else {
         player2++;
       }
 
       //Checagem do vencedor
-      checkWin();
+      checkWinCondition();
     }
   });
 }
@@ -64,7 +68,7 @@ function checkElement(player1, player2) {
 }
 
 //Função de checagem de vencedor
-function checkWin() {
+function checkWinCondition() {
   let b1 = document.getElementById("block-1");
   let b2 = document.getElementById("block-2");
   let b3 = document.getElementById("block-3");
