@@ -1,2 +1,2 @@
 # Jogo-da-Velha
-Esta ser[a a execução do primeiro projeto do curso de JS.
+O projeto encontra-se incompleto, porém será finalizado no próximo trimestre de 2024.
